@@ -11,9 +11,11 @@ function CV({
   email,
   tel,
   github,
-  portfolio
+  portfolio,
+  workplaces,
 }) {
   let education;
+  let workplaces_filtered = "";
 
   if (courses !== "") {
     education = (
@@ -32,22 +34,37 @@ function CV({
     education = "";
   }
 
+  if (workplaces.length !== 0) {
+    workplaces_filtered = workplaces.map((wp) => (
+      <div className="cv_workplaces">
+        <h3>Has following work experience:</h3>
+        <div className="singleWorkplace">
+          {wp.dur} years in {wp.comp} as a {wp.pos}. {wp.abt}.
+        </div>
+      </div>
+    ));
+  }
+
   return (
-    <>
-      <div className="cv">
+    <div className="cv">
+      <div className="inner_cv">
         <h2 className="cv_name">{fname + " " + lname}</h2>
         <h3 className="cv_spec">A professional {spec}</h3>
         <img src={photo}></img>
         <div className="cv_about">
-          A little about {fname}: <br></br><div>{about}</div>
+          A little about {fname}: <br></br>
+          <div>{about}</div>
         </div>
         <div className="cv_education">{education}</div>
         <h3 className="cv_skills">
           {fname} is condifent in his skills with following: <br></br>
           <div className="skillsButtons">
-          {skills.map((skl) => (
-            <button disabled className="skillsButton" key={skl.id}>{skl.name}</button>
-          ))}</div>
+            {skills.map((skl) => (
+              <button disabled className="skillsButton" key={skl.id}>
+                {skl.name}
+              </button>
+            ))}
+          </div>
         </h3>
         <div className="cv_contacts">
           <h2>Contacts</h2>
@@ -58,8 +75,9 @@ function CV({
             <a href={portfolio}>Portfolio</a>
           </div>
         </div>
+        {workplaces_filtered}
       </div>
-    </>
+    </div>
   );
 }
 

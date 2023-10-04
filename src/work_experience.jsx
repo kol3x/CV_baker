@@ -1,7 +1,11 @@
-let nextId = 0;
-
-function WorkExperience({setPosition, setCompany, setDuration, setAbout, addWorkplace, workplaces}) {
-
+function WorkExperience({
+  setPosition,
+  setCompany,
+  setDuration,
+  setAbout,
+  addWorkplace,
+  workplaces,
+}) {
   return (
     <form className="work">
       <h2>Work experience</h2>

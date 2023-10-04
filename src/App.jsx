@@ -35,13 +35,14 @@ function App() {
   const [position, setPosition] = useState("");
   const [company, setCompany] = useState("");
   const [duration, setDuration] = useState("");
-  const [aboutwork, setAboutwork] = useState("");
+  const [aboutWork, setAboutwork] = useState("");
 
+  let nextIdWork = 0;
   const addWorkplace = (event) => {
     event.preventDefault();
     setWorkplaces([
       ...workplaces,
-      { id: nextId++, pos: position, comp: company, dur: duration, abt: about },
+      { id: nextIdWork++, pos: position, comp: company, dur: duration, abt: aboutWork },
     ]);
     setPosition("");
     setCompany("");

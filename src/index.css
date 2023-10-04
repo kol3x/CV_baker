@@ -136,13 +136,19 @@ li {
   grid-row: 2 / 6;
   color: black;
   font-weight: 700;
+  border-radius: 5px;
+}
+
+.inner_cv {
+  margin:10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(auto-fill, 100px);
   padding: 20px;
+  border-radius: 5px;
 }
 
-.cv > img {
+.inner_cv > img {
   border-radius: 50%;
   grid-row: 1;
   grid-column: 3;
@@ -163,8 +169,8 @@ li {
 }
 
 .cv_about {
-  grid-row: 4;    
-  grid-column: 3;
+  grid-row: 3;
+  grid-column: 1 / 3;
   justify-self: center;
   padding: 20px;
 }
@@ -175,24 +181,36 @@ li {
 }
 
 .cv_contacts {
-  grid-row: 6;
+  grid-row: 4;
   grid-column: 3;
+  margin-left: 17px;
 }
 
 .cv_education {
-  grid-row: 7;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  grid-row: 6;
   grid-column: 1 / 3;
   font-size: 14px;
+  text-align: left;
+  margin-left: 17px;
 }
 
 .cv_contacts_inside {
   display: grid;
   justify-items: start;
   font-style: oblique;
+  margin-left: 50px;
 }
 
 .cv_contacts_inside > li {
   border: none;
+}
+
+.cv_workplaces {
+  margin-left: 17px;
+  grid-row: 8;
+  grid-column: 1 / 3;
 }
 
 .skillsButton {
@@ -201,7 +219,7 @@ li {
 }
 
 .skillsButton:hover {
-  cursor:default;
+  cursor: default;
 }
 
 .skillsButtons {
